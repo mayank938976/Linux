@@ -1,1 +1,475 @@
-ls -- to view the content within a directory
+🐧 LINUX COMMAND MASTER LIST
+PART 1: File & Directory Management (100+ commands)
+
+👉 This category covers:
+
+Creating, deleting, copying files/directories
+
+Navigating filesystem
+
+File metadata & attributes
+
+File linking & permissions (basic level)
+
+I’ll group them logically so your brain doesn’t melt.
+
+📁 A. Navigation & Directory Handling
+
+pwd – print current working directory
+
+ls – list directory contents
+
+ls -a – list including hidden files
+
+ls -l – long listing format
+
+ls -lh – human-readable sizes
+
+ls -R – recursive listing
+
+tree – directory tree view
+
+cd – change directory
+
+cd .. – move up one level
+
+cd ~ – go to home directory
+
+cd - – switch to previous directory
+
+dirs – directory stack
+
+pushd – save & change directory
+
+popd – return from directory stack
+
+stat – file/directory metadata
+
+📂 B. Creating Files & Directories
+
+touch – create empty file
+
+mkdir – create directory
+
+mkdir -p – create parent directories
+
+install – copy + set ownership
+
+install -d – create directories with permissions
+
+tempfile – create temporary file
+
+mktemp – secure temp file creation
+
+🗑️ C. Deleting Files & Directories
+
+rm – remove file
+
+rm -f – force delete
+
+rm -r – recursive delete
+
+rm -rf – dangerous recursive force delete
+
+rmdir – remove empty directory
+
+unlink – remove file (single target)
+
+shred – overwrite file before delete
+
+📄 D. Copying, Moving & Renaming
+
+cp – copy files
+
+cp -r – recursive copy
+
+cp -a – preserve attributes
+
+cp -u – copy only if newer
+
+cp -v – verbose copy
+
+mv – move/rename file
+
+mv -i – interactive move
+
+mv -n – no overwrite
+
+rename – batch rename files
+
+🔗 E. Links (Hard & Symbolic)
+
+ln – create hard link
+
+ln -s – create symbolic link
+
+readlink – output symlink target
+
+realpath – resolve absolute path
+
+stat -L – follow symlink
+
+🔍 F. File Identification & Info
+
+file – identify file type
+
+statx – extended file stats
+
+basename – extract filename
+
+dirname – extract directory path
+
+du – disk usage
+
+du -sh – directory size summary
+
+ncdu – interactive disk usage viewer
+
+🔐 G. Permissions & Ownership (File-Level)
+
+chmod – change permissions
+
+chmod +x – make executable
+
+chmod -R – recursive permissions
+
+chown – change owner
+
+chown -R – recursive ownership
+
+chgrp – change group
+
+getfacl – view ACL permissions
+
+setfacl – set ACL permissions
+
+🏷️ H. File Attributes & Extended Controls
+
+lsattr – list file attributes
+
+chattr – change file attributes
+
+setfattr – set extended attributes
+
+getfattr – get extended attributes
+
+🧪 I. File Comparison & Integrity
+
+cmp – compare binary files
+
+diff – compare text files
+
+sdiff – side-by-side diff
+
+md5sum – checksum (legacy)
+
+sha1sum – checksum
+
+sha256sum – secure checksum
+
+cksum – CRC checksum
+
+📦 J. File Splitting & Joining
+
+split – split files
+
+csplit – context split
+
+join – join files
+
+paste – merge lines
+
+fold – line wrap
+
+nl – number lines
+
+🧰 K. Special File Utilities
+
+statfs – filesystem stats
+
+vdir – verbose ls
+
+dir – directory listing
+
+dircolors – color config for ls
+
+watch ls – monitor directory changes
+
+inotifywait – watch file changes
+
+attrib – file attributes (compat)
+
+📁 L. Searching Within Directories (Basic)
+
+find – search files
+
+find -type f – find files
+
+find -type d – find directories
+
+find -name – search by name
+
+find -size – search by size
+
+find -perm – search by permissions
+
+locate – fast indexed search
+
+updatedb – update locate DB
+
+🧹 M. Housekeeping & Cleanup
+
+statx – low-level file info
+
+fallocate – preallocate space
+
+truncate – resize file
+
+sync – flush filesystem buffers
+
+stat -c – custom stat output
+
+pathchk – path validity
+
+duf – modern disk usage tool
+
+stat --format – formatted stats
+
+watch du – monitor disk usage
+
+lsblk – block device overview (file context)
+PART 2: File Reading, Viewing & Editing (100+ commands)
+
+👉 This part covers:
+
+Reading files (small & large)
+
+Viewing logs
+
+Text editing (CLI editors)
+
+Paging, formatting, navigation
+
+Non-destructive inspection (very important for sysadmin & security)
+
+I’ll keep it structured + practical.
+
+📖 A. Basic File Reading (Small Files)
+
+cat – display file content
+
+cat -n – number all lines
+
+cat -b – number non-empty lines
+
+cat -A – show hidden characters
+
+cat -E – show line endings
+
+tac – reverse cat (bottom to top)
+
+nl – number lines (advanced)
+
+pr – pretty-print text
+
+column – align output into columns
+
+fmt – simple text formatter
+
+📜 B. Paging & Large File Viewing (Logs, Big Files)
+
+less – view large files safely
+
+less -N – show line numbers
+
+less -S – disable line wrapping
+
+less +F – follow file (like tail -f)
+
+more – basic pager
+
+most – enhanced pager
+
+pager – default pager
+
+view – read-only vim mode
+
+lv – multibyte text viewer
+
+watch cat – repeatedly view output
+
+🧾 C. Head, Tail & Partial Viewing
+
+head – first 10 lines
+
+head -n 50 – first 50 lines
+
+head -c 100 – first 100 bytes
+
+tail – last 10 lines
+
+tail -n 50 – last 50 lines
+
+tail -f – follow file growth
+
+tail -F – follow rotated logs
+
+sed -n 1,10p – print specific lines
+
+awk 'NR<=10' – first 10 lines
+
+cut -c 1-20 – view character ranges
+
+✏️ D. Terminal-Based Editors (Beginner Friendly)
+
+nano – simple text editor
+
+nano -l – show line numbers
+
+nano -c – cursor position
+
+nano -w – disable wrapping
+
+micro – modern nano-like editor
+
+neovim – advanced vim alternative
+
+joe – joe’s editor
+
+jed – lightweight editor
+
+mg – emacs-style editor
+
+ee – easy editor
+
+🧠 E. Vim / Vi (Professional Editing)
+
+vi – classic editor
+
+vim – improved vi
+
+vim -R – read-only mode
+
+vim +10 file – open at line 10
+
+vimdiff – diff editor
+
+gvim – GUI vim
+
+rvim – restricted vim
+
+vimtutor – vim training
+
+ex – line editor
+
+view file – view-only vim
+
+🔍 F. Inline Viewing & Filtering
+
+grep – search text
+
+grep -i – ignore case
+
+grep -n – show line numbers
+
+grep -r – recursive search
+
+egrep – extended regex
+
+fgrep – fixed string search
+
+awk – pattern scanning
+
+sed – stream editor
+
+cut – extract columns
+
+tr – translate characters
+
+🧪 G. File Structure & Encoding Inspection
+
+file – detect file type
+
+stat – metadata inspection
+
+wc – word/line/byte count
+
+wc -l – line count
+
+iconv – encoding conversion
+
+dos2unix – CRLF → LF
+
+unix2dos – LF → CRLF
+
+hexdump – hex view
+
+xxd – hex editor view
+
+strings – extract printable strings
+
+🧷 H. Logs & Real-Time Monitoring
+
+tail -f /var/log/syslog – live log
+
+journalctl – systemd logs
+
+journalctl -f – follow logs
+
+journalctl -xe – error logs
+
+dmesg – kernel messages
+
+watch dmesg – monitor kernel logs
+
+less /var/log/auth.log – auth logs
+
+last – login history
+
+lastlog – last login per user
+
+who – current users
+
+🧹 I. Formatting, Cleaning & Layout
+
+expand – tabs to spaces
+
+unexpand – spaces to tabs
+
+fold – wrap long lines
+
+rev – reverse text
+
+sort – sort lines
+
+uniq – remove duplicates
+
+uniq -c – count duplicates
+
+paste – merge files
+
+join – join files on field
+
+column -t – table format
+
+🧰 J. Advanced & Lesser-Known Viewers
+
+bat – modern cat (syntax highlight)
+
+ccat – colored cat
+
+multitail – multiple log viewer
+
+lesspipe – smart less helper
+
+watch -n 1 tail – timed view
+
+peekfd – inspect FD output
+
+od – octal dump
+
+statx – extended stats
+
+file -i – MIME type
+
+read – read user input
